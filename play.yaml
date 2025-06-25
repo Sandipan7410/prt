@@ -1,6 +1,6 @@
 ---
  - name: install apache
-   hosts: s1
+   hosts: Slave
    become: yes
    tasks:
      - name: install apache
