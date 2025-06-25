@@ -1,10 +1,12 @@
 ---
- - name: install apache
-   hosts: Slave
-   become: yes
-   tasks:
-     - name: install apache
-       apt: name=apache2 update_cache=yes state=present
-
-
-
+- name: Install Apache
+  hosts: Slave
+  become: yes
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  tasks:
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
